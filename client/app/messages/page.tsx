@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import React, { useEffect, useState, Suspense } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { MessageSquare, ArrowLeft } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Button } from '@/components/ui/Button';
-import { useRouter } from 'next/navigation';
 import { ConversationList } from '@/components/chat/ConversationList';
 import { ChatWindow } from '@/components/chat/ChatWindow';
 import { useChatStore } from '@/store/chatStore';
@@ -14,7 +13,8 @@ import { useRequireAuth } from '@/hooks/useRequireAuth';
 import { messageService } from '@/services/messageService';
 import type { Conversation } from '@/types';
 
-export default function MessagesPage() {
+// මෙතන තිබ්බ export default එක අයින් කරලා නම වෙනස් කරා
+function MessagesContent() {
     useRequireAuth();
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -159,5 +159,14 @@ export default function MessagesPage() {
                 </div>
             </main>
         </div>
+    );
+}
+
+
+export default function MessagesPage() {
+    return (
+        <Suspense fallback={<div>Loading messages...</div>}>
+            <MessagesContent />
+        </Suspense>
     );
 }
