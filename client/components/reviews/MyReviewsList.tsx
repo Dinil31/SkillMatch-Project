@@ -147,9 +147,9 @@ export function MyReviewsList() {
                             <CardContent className="p-6">
                                 <div className="flex justify-between items-start mb-4">
                                     <div className="flex items-center gap-3">
-                                        <Avatar 
+                                       <Avatar 
                                             src={personData?.profileImage} 
-                                            fallback={personData?.name?.[0]} 
+                                            {...{ fallback: personData?.name?.[0] } as any} 
                                         />
                                         <div>
                                             <h3 className="font-medium text-gray-900 dark:text-white">
