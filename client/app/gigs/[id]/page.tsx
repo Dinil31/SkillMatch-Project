@@ -259,7 +259,7 @@ export default function GigDetailPage() {
                                         </div>
                                     ) : (
                                         <div className="text-center">
-                                            <Badge variant={(gig as any).approvalStatus === 'approved' ? 'success' : 'danger'} size="lg" className="w-full justify-center">
+                                            <Badge variant={(gig as any).approvalStatus === 'approved' ? 'success' : 'danger'} className="w-full justify-center text-lg py-1">
                                                 Status: {(gig as any).approvalStatus}
                                             </Badge>
                                         </div>
