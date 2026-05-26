@@ -135,9 +135,9 @@ export function MyReviewsList() {
                     // Determine the other person involved
                     let otherPerson;
                     if (isGiven) {
-                        otherPerson = review.direction === 'customer_to_worker' ? review.workerId : review.customerId;
+                        otherPerson = (review as any).direction === 'customer_to_worker' ? (review as any).workerId : (review as any).customerId;
                     } else {
-                        otherPerson = review.direction === 'customer_to_worker' ? review.customerId : review.workerId;
+                        otherPerson = (review as any).direction === 'customer_to_worker' ? (review as any).customerId : (review as any).workerId;
                     }
                     const personData = otherPerson as any;
                     const hasLiked = user && review.likes?.includes(user._id);
