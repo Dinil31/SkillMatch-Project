@@ -205,7 +205,7 @@ export default function WorkerSettingsPage() {
                     experience: data.experience,
                     availability: data.availability,
                     skills: skillsArray,
-                    location: { city: data.city || '', district: data.district || '' },
+                    location: { city: (data as any).city || '', district: (data as any).district || '' },
                 });
             } else {
                 // Create profile for the first time
