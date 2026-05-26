@@ -99,10 +99,10 @@ export function WorkerCard({ worker, index = 0 }: WorkerCardProps) {
             <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 mb-4">
                 <span className="flex items-center gap-1">
                     <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
-                    {worker.locationType === 'island-wide' && 'Island Wide'}
-                    {worker.locationType === 'districts' && worker.allowedDistricts && worker.allowedDistricts.length > 0 && worker.allowedDistricts.slice(0, 2).join(', ') + (worker.allowedDistricts.length > 2 ? '...' : '')}
-                    {worker.locationType === 'districts' && (!worker.allowedDistricts || worker.allowedDistricts.length === 0) && 'Specific Districts'}
-                    {worker.locationType === 'radius' && `Within ${worker.locationRadiusKm || 10}km`}
+                    {(worker as any).locationType === 'island-wide' && 'Island Wide'}
+                    {(worker as any).locationType === 'districts' && (worker as any).allowedDistricts && (worker as any).allowedDistricts.length > 0 && (worker as any).allowedDistricts.slice(0, 2).join(', ') + ((worker as any).allowedDistricts.length > 2 ? '...' : '')}
+                    {(worker as any).locationType === 'districts' && (!(worker as any).allowedDistricts || (worker as any).allowedDistricts.length === 0) && 'Specific Districts'}
+                    {(worker as any).locationType === 'radius' && `Within ${(worker as any).locationRadiusKm || 10}km`}
                 </span>
                 <span className="flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5" aria-hidden="true" />
