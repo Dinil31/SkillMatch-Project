@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
@@ -58,7 +59,8 @@ const jobPostSchema = z.object({
 
 type JobPostFormValues = z.infer<typeof jobPostSchema>;
 
-export default function PostNewJobPage() {
+// මෙතන තිබ්බ export default එක අයින් කරලා නම වෙනස් කරා
+function PostNewJobContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const defaultWorkerName = searchParams.get('workerName') || '';
@@ -237,5 +239,14 @@ export default function PostNewJobPage() {
                 </form>
             </div>
         </DashboardLayout>
+    );
+}
+
+// අලුතින් එකතු කරපු Suspense wrapper එක
+export default function PostNewJobPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PostNewJobContent />
+        </Suspense>
     );
 }
