@@ -91,7 +91,7 @@ export function EditReviewModal({ review, onClose, onSuccess }: EditReviewModalP
                                 <button
                                     key={star}
                                     type="button"
-                                    onClick={() => setRating(star)}
+                                    onClick={() => setRating(star as any)}
                                     className="focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-full p-1"
                                 >
                                     <Star
