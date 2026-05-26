@@ -148,10 +148,10 @@ export default function WorkerProfilePage() {
 
                                         <span className="flex items-center gap-1 text-sm text-gray-500">
                                             <MapPin className="w-4 h-4" aria-hidden="true" />
-                                            {worker.locationType === 'island-wide' && 'Island Wide'}
-                                            {worker.locationType === 'districts' && worker.allowedDistricts && worker.allowedDistricts.length > 0 && worker.allowedDistricts.join(', ')}
-                                            {worker.locationType === 'districts' && (!worker.allowedDistricts || worker.allowedDistricts.length === 0) && 'Specific Districts'}
-                                            {worker.locationType === 'radius' && `Within ${worker.locationRadiusKm || 10}km radius`}
+                                           {(worker as any).locationType === 'island-wide' && 'Island Wide'}
+{(worker as any).locationType === 'districts' && (worker as any).allowedDistricts && (worker as any).allowedDistricts.length > 0 && (worker as any).allowedDistricts.join(', ')}
+{(worker as any).locationType === 'districts' && (!(worker as any).allowedDistricts || (worker as any).allowedDistricts.length === 0) && 'Specific Districts'}
+{(worker as any).locationType === 'radius' && `Within ${(worker as any).locationRadiusKm || 10}km radius`}
                                         </span>
 
                                         <span className="flex items-center gap-1 text-sm text-gray-500">
