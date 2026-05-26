@@ -327,7 +327,7 @@ export const dummyReviews: Review[] = [
         jobId: 'j1',
         rating: 5,
         comment: 'Kasun delivered an exceptional web application. His code quality is outstanding and he communicated perfectly throughout the project. Highly recommended!',
-        isVisible: true,
+        
         createdAt: '2024-03-01T00:00:00Z',
         updatedAt: '2024-03-01T00:00:00Z',
     },
@@ -338,7 +338,7 @@ export const dummyReviews: Review[] = [
         jobId: 'j2',
         rating: 5,
         comment: 'Nimasha created a beautiful design for our app. She understood our vision perfectly and delivered beyond expectations. Will definitely work with her again!',
-        isVisible: true,
+    
         createdAt: '2024-03-05T00:00:00Z',
         updatedAt: '2024-03-05T00:00:00Z',
     },
@@ -349,7 +349,7 @@ export const dummyReviews: Review[] = [
         jobId: 'j3',
         rating: 5,
         comment: 'Ruwan fixed our plumbing issue quickly and professionally. He arrived on time, explained everything clearly, and the price was very reasonable. 5 stars!',
-        isVisible: true,
+        
         createdAt: '2024-03-10T00:00:00Z',
         updatedAt: '2024-03-10T00:00:00Z',
     },
